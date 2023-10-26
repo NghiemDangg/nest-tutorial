@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  postgres:
+    image: postgres:15
+    ports:
+      - '5433:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword # Sửa dòng này để đặt mật khẩu cho POSTGRES_USER
+      POSTGRES_DB: nestJsTestApi
+    networks:
+      - nestjs-network
+networks:
+  nestjs-network:
+#Create container,network,...from "docker composer" file:
+# docker compose up -d
